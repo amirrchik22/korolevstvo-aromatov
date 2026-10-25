@@ -230,6 +230,12 @@
 
   /* ---------- Вопросы ---------- */
   .faq-sec h2 { margin-bottom: 56px; }
+  .faq-ask { background: var(--tint); border-radius: 24px; padding: 32px 30px; align-self: start; }
+  .faq-ask img { width: 76px; height: 76px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; }
+  .faq-ask .faq-ask-title { font: 500 28px/1.15 var(--display); color: var(--ink); margin-bottom: 12px; }
+  .faq-ask p { color: var(--ink-2); font-size: 15px; }
+  .faq-ask .btn { margin-top: 10px; }
+
   .faq { border-top: 1px solid var(--ink); }
   details { border-bottom: 1px solid var(--line); }
   summary { cursor: pointer; list-style: none; padding: 24px 48px 24px 0; position: relative; font: 500 25px/1.25 var(--display); }
@@ -293,6 +299,16 @@
   .sticky-cta .btn { min-height: 46px; padding: 0 24px; background: var(--ink); color: #fff; }
 
   /* ================= Планшет и шире ================= */
+
+  /* ---------- Скруглённые блоки-панели во всю ширину ---------- */
+  .hero { margin: 16px 16px 0; border-radius: 32px; }
+  #prices.tinted { margin: 0 16px; border-radius: 32px; }
+  .final { margin: 16px; border-radius: 32px; }
+  .plan.main { border-radius: 22px; }
+  .intro-photo img, .mosaic img, .dirs-img img, .pack-imgs img, .about-photo, .about-photo img { border-radius: 22px; }
+  .btn, input[type=text], input[type=tel] { border-radius: 12px; }
+  .modal { border-radius: 24px 24px 0 0; }
+
   @media (min-width: 720px) {
     .cmp-row, .cmp { grid-template-columns: 1.7fr 1fr 1fr 64px; }
     .dir-cards { grid-template-columns: 1fr 1fr; }
@@ -334,7 +350,8 @@
     .about-photo { order: 2; margin-top: -40px; }
     .faq-sec .wrap { display: grid; grid-template-columns: 1fr 2fr; column-gap: 40px; }
     .faq-sec h2 { grid-column: 1 / -1; }
-    .faq { grid-column: 2; }
+    .faq { grid-column: 2; grid-row: 2; }
+    .faq-ask { grid-column: 1; grid-row: 2; position: sticky; top: 24px; margin-right: 24px; }
   }
 
   /* ================= Телефон ================= */
@@ -426,6 +443,9 @@
     .stats span { font-size: 12px; line-height: 1.35; }
 
     .faq-sec h2 { margin-bottom: 32px; }
+    .faq-sec .wrap { display: flex; flex-direction: column; }
+    .faq-ask { order: 2; margin-top: 32px; padding: 26px 22px; }
+    .faq-ask .btn { width: 100%; }
     summary { font-size: 22px; }
     .final { padding: 96px 0 104px; }
     .final h2 { font-size: 50px; }
@@ -439,6 +459,14 @@
     .sticky-cta { display: flex; }
   }
 
+
+  @media (max-width: 719px) {
+    .hero { margin: 8px 8px 0; border-radius: 24px; }
+    #prices.tinted { margin: 0 8px; border-radius: 24px; }
+    .final { margin: 8px; border-radius: 24px; }
+    .intro-photo img, .mosaic img, .dirs-img img, .pack-imgs img, .about-photo, .about-photo img { border-radius: 16px; }
+  }
+  @media (min-width: 720px) { .modal { border-radius: 24px; } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 </style>
 </head>
@@ -742,10 +770,17 @@
     <section id="faq" class="ruled faq-sec">
       <div class="wrap">
         <h2>Частые вопросы</h2>
+        <aside class="faq-ask">
+          <img src="img/daria-face.jpg" alt="Дарья Казанкова" loading="lazy">
+          <p class="faq-ask-title">Не нашла ответ на свой вопрос?</p>
+          <p>Напиши мне слово «БАЗА» — расскажу подробнее о направлении и помогу выбрать формат. Отвечаю лично.</p>
+          <a class="btn btn-fill" href="#" data-ask>Написать в Telegram</a>
+        </aside>
         <div class="faq">
           <details><summary>Что я получу после оплаты?</summary><p>После оплаты я свяжусь с тобой в Telegram или по телефону, который ты укажешь, передам доступ к поставщикам по выбранному направлению и расскажу об условиях сотрудничества. В парфюмерных пакетах сразу стартует наставничество.</p></details>
           <details><summary>Как оплатить Долями?</summary><p>На странице оплаты Т-Банка выбери «Долями»: сумма делится на 4 платежа раз в две недели, без переплаты. Доступно при одобрении сервисом Т-Банка.</p></details>
           <details><summary>Как получить цену для участниц «Мать в квадрате»?</summary><p>Введи промокод сообщества при оформлении — цена пересчитается автоматически.</p></details>
+          <details><summary>Можно начать с одного поставщика?</summary><p>Да. Один поставщик оригинальной парфюмерии стоит 17&#8239;000 ₽, в него входят две недели моей личной поддержки. Поставщика упаковки и атомайзеров можно добавить отдельно.</p></details>
           <details><summary>Нужно ли сразу закупать товар?</summary><p>Нет. Можно начать с изучения ассортимента и условий, определиться с бюджетом и аудиторией. Я расскажу, как войти в нишу без предварительной закупки.</p></details>
           <details><summary>Нужна ли маркировка «Честный знак»?</summary><p>Да, парфюмерия подлежит обязательной маркировке. В наставничестве разберём, как с этим работать, чтобы продавать по закону.</p></details>
           <details><summary>Гарантируете ли вы доход?</summary><p>Нет, и честно говорю об этом заранее. Я даю доступ к поставщикам, знания и поддержку. Доход зависит от твоих действий, вложений и спроса.</p></details>
