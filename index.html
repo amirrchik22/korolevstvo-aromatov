@@ -79,13 +79,15 @@
   /* ---------- Первый экран ---------- */
   .hero {
     position: relative; min-height: min(100vh, 820px); overflow: hidden;
-    background: radial-gradient(120% 90% at 85% 100%, #7a7a7a 0%, #3c3c3c 45%, #1f1f1f 100%);
+    background:
+      radial-gradient(38% 60% at 74% 48%, rgba(150,150,150,.55) 0%, rgba(150,150,150,0) 70%),
+      radial-gradient(120% 90% at 85% 100%, #6e6e6e 0%, #3a3a3a 45%, #1e1e1e 100%);
     display: flex; flex-direction: column; color: #fff;
   }
   .hero-portrait {
-    position: absolute; z-index: 1; right: 6%; bottom: -3%; height: 106%; width: auto; max-width: none;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 88%, transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 88%, transparent 100%);
+    position: absolute; z-index: 1; right: 9%; bottom: 0; height: 104%; width: auto; max-width: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 22%, #000 84%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 22%, #000 84%, transparent 100%);
   }
   .nav {
     position: relative; z-index: 3; margin: 26px 34px 0;
@@ -102,12 +104,19 @@
   .nav-cta:hover { text-decoration-color: #fff; }
   .hero-copy { position: relative; z-index: 2; margin-top: clamp(96px, 15vh, 170px); max-width: calc(600px + max(0px, (100vw - 1200px) / 2)); padding-left: max(clamp(24px, 6vw, 96px), calc((100vw - 1200px) / 2 + 48px)); padding-right: 24px; }
   .hero-copy .name { font: 500 clamp(44px, 6.2vw, 88px)/.96 var(--display); letter-spacing: -0.02em; }
-  .hero-copy .role { font: 400 16px/1.55 var(--sans); opacity: .82; max-width: 330px; margin-top: 22px; }
-  .hero-btn { margin-top: 30px; }
+  .hero-copy .role { font: 400 18px/1.55 var(--sans); opacity: .85; max-width: 400px; margin-top: 26px; }
+  .hero-actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 34px; }
+  .hero-btn { margin-top: 0; }
+  .hero-link { font: 500 15px/1 var(--sans); color: #fff; text-decoration: underline; text-underline-offset: 6px; text-decoration-color: rgba(255,255,255,.45); }
+  .hero-link:hover { text-decoration-color: #fff; }
+  .hero-facts { display: flex; gap: 0; margin-top: 48px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.18); max-width: 440px; }
+  .hero-facts div { flex: 1; padding-right: 18px; font: 400 13px/1.4 var(--sans); color: rgba(255,255,255,.7); }
+  .hero-facts div + div { padding-left: 18px; border-left: 1px solid rgba(255,255,255,.18); }
+  .hero-facts b { display: block; font: 400 26px/1.1 var(--sans); letter-spacing: -0.02em; color: #fff; margin-bottom: 4px; }
   .hero-word {
-    position: relative; z-index: 2; margin-top: auto; text-align: center;
+    position: relative; z-index: 0; margin-top: auto; text-align: center;
     font: 400 clamp(84px, 20vw, 380px)/.8 var(--display); letter-spacing: -0.03em;
-    color: var(--paper); transform: translateY(.06em); user-select: none;
+    color: rgba(243,240,236,.92); transform: translateY(.06em); user-select: none;
   }
 
   /* ---------- Твоё дело ---------- */
@@ -300,6 +309,11 @@
 
   /* ================= Планшет и шире ================= */
 
+
+  /* Первый экран: текст по центру высоты, без гигантского слова */
+  .hero-word { display: none; }
+  .hero-copy { margin-top: auto; margin-bottom: auto; padding-top: 48px; padding-bottom: 72px; }
+  .hero-facts { margin-top: 44px; }
   /* ---------- Скруглённые блоки-панели во всю ширину ---------- */
   .hero { margin: 16px 16px 0; border-radius: 32px; }
   #prices.tinted { margin: 0 16px; border-radius: 32px; }
@@ -372,11 +386,16 @@
       -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 96%); mask-image: linear-gradient(to bottom, #000 55%, transparent 96%);
     }
     .hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,.3) 0%, transparent 18%, transparent 46%, rgba(20,18,24,.8) 78%); }
-    .hero-copy { margin-top: auto; margin-bottom: 18px; padding: 0 20px; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
+    .hero-copy { margin-top: auto; margin-bottom: 0; padding: 0 20px 26px; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
     .hero-copy .name { font-size: 46px; line-height: .98; }
     .hero-copy .role { font-size: 15px; line-height: 1.45; max-width: 300px; margin-top: 14px; }
-    .hero-btn { width: 100%; min-height: 54px; font-size: 16px; margin-top: 22px; text-shadow: none; }
-    .hero-word { margin-top: 0; font-size: 21vw; letter-spacing: -0.045em; transform: translateY(.1em); }
+    .hero-actions { margin-top: 22px; gap: 16px; justify-content: center; }
+    .hero-btn { width: 100%; min-height: 54px; font-size: 16px; text-shadow: none; }
+    .hero-facts { display: none; }
+    .hero-facts div { padding-right: 10px; font-size: 12px; }
+    .hero-facts div + div { padding-left: 10px; }
+    .hero-facts b { font-size: 20px; }
+    .hero-word { margin-top: 14px; font-size: 21vw; letter-spacing: -0.045em; transform: none; padding-left: 16px; }
 
     .intro-sec { padding: 80px 0 64px; }
     .intro { gap: 40px; }
@@ -488,10 +507,17 @@
     </nav>
     <div class="hero-copy">
       <div class="name">Дарья Казанкова</div>
-      <div class="role">Парфюмерный эксперт, в профессии 7+&nbsp;лет. Доступ к поставщикам оригинальной парфюмерии и наставничество.</div>
-      <a class="btn btn-white hero-btn" href="#prices">Выбрать направление</a>
+      <div class="role">Парфюмерный эксперт. Доступ к проверенным поставщикам оригинальной парфюмерии, корейской и люкс-косметики — и личное наставничество.</div>
+      <div class="hero-actions">
+        <a class="btn btn-white hero-btn" href="#prices">Выбрать направление</a>
+        <a class="hero-link" href="#compare">Сравнить цены</a>
+      </div>
+      <div class="hero-facts">
+        <div><b>7+ лет</b>в парфюмерии</div>
+        <div><b>3</b>направления</div>
+        <div><b>Долями</b>4 платежа без переплаты</div>
+      </div>
     </div>
-    <div class="hero-word" aria-hidden="true">ароматы</div>
   </header>
 
   <main>
