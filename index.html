@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Королевство Ароматов — доступ к поставщикам | Дарья Казанкова</title>
+<meta name="description" content="Поставщики оригинальной парфюмерии, корейской и люкс-косметики с наставничеством парфюмерного эксперта Дарьи Казанковой.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #e7e2dd;
+    --paper: #f3f0ec;
+    --tint: #ece5f2;
+    --white: #fbfaf8;
+    --ink: #2c2533;
+    --ink-2: #4d4558;
+    --ink-3: #6f6878;
+    --line: #dcd5cf;
+    --line-2: #c9c0ca;
+    --lav: #8c7aa9;
+    --lav-deep: #6f5c8f;
+    --lav-hover: #5d4c7a;
+    --lav-soft: #e6dfee;
+    --lav-ghost: #dcd3e6;
+    --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --sans: 'Onest', system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--page); color: var(--ink);
+    font: 400 17px/1.65 var(--sans);
+    font-variant-numeric: lining-nums; font-feature-settings: 'lnum' 1, 'kern' 1;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 500; line-height: 1.02; letter-spacing: -0.015em; color: var(--ink); }
+  h2 { font-size: clamp(40px, 5.4vw, 72px); }
+  h3 { font-size: 28px; font-weight: 500; line-height: 1.12; letter-spacing: -0.005em; }
+  p { margin: 0 0 14px; }
+  .num { font-variant-numeric: lining-nums tabular-nums; font-feature-settings: 'lnum' 1, 'tnum' 1; }
+  .fig { font-family: var(--sans); font-size: .78em; letter-spacing: 0; }
+  .rub { font-family: var(--sans); font-size: .48em; font-weight: 400; margin-left: .2em; vertical-align: .5em; letter-spacing: 0; opacity: .75; }
+
+  .sheet { max-width: 1280px; margin: 0 auto; background: var(--paper); overflow: hidden; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+  section { padding: 120px 0; }
+  .ruled { border-top: 1px solid var(--line); }
+  .tinted { background: var(--tint); }
+
+  .lead { font-size: 19px; line-height: 1.6; color: var(--ink-2); }
+  .small, .disclaimer, .section-sub { font-size: 14px; line-height: 1.55; color: var(--ink-3); max-width: 62ch; }
+  .section-sub { font-size: 17px; color: var(--ink-2); }
+
+  /* Кнопки: прямые, без капсул. Второстепенные действия — подчёркнутой ссылкой */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 52px; padding: 0 30px; border-radius: 2px;
+    font: 500 15px/1 var(--sans); letter-spacing: .01em; text-decoration: none; cursor: pointer;
+    border: 1px solid transparent; transition: background .2s, color .2s, border-color .2s;
+  }
+  .btn-fill { background: var(--ink); color: #fff; }
+  .btn-fill:hover { background: var(--lav-deep); }
+  .btn-line { border-color: var(--ink); color: var(--ink); background: transparent; }
+  .btn-line:hover { background: var(--ink); color: #fff; }
+  .btn-white { background: #fff; color: var(--ink); }
+  .btn-white:hover { background: var(--lav-soft); }
+  .btn-block { width: 100%; }
+  .link {
+    font: 500 15px/1.4 var(--sans); color: var(--ink); text-decoration: underline;
+    text-decoration-thickness: 1px; text-underline-offset: 6px; text-decoration-color: var(--line-2);
+    transition: color .2s, text-decoration-color .2s; background: none; border: 0; padding: 0; cursor: pointer;
+  }
+  .link:hover { color: var(--lav-deep); text-decoration-color: currentColor; }
+
+  /* ---------- Первый экран ---------- */
+  .hero {
+    position: relative; min-height: min(100vh, 820px); overflow: hidden;
+    background: radial-gradient(120% 90% at 85% 100%, #7a7a7a 0%, #3c3c3c 45%, #1f1f1f 100%);
+    display: flex; flex-direction: column; color: #fff;
+  }
+  .hero-portrait {
+    position: absolute; z-index: 1; right: 6%; bottom: -3%; height: 106%; width: auto; max-width: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 88%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 88%, transparent 100%);
+  }
+  .nav {
+    position: relative; z-index: 3; margin: 26px 34px 0;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 16px 26px; border-radius: 20px;
+    background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.22);
+    backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  }
+  .nav-logo { font: 500 23px/1 var(--display); text-decoration: none; white-space: nowrap; }
+  .nav-links { display: none; gap: 30px; font: 400 14px/1 var(--sans); }
+  .nav-links a { text-decoration: none; opacity: .8; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta { font: 500 14px/1 var(--sans); color: #fff; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(255,255,255,.5); white-space: nowrap; }
+  .nav-cta:hover { text-decoration-color: #fff; }
+  .hero-copy { position: relative; z-index: 2; margin-top: clamp(96px, 15vh, 170px); max-width: 600px; padding-left: clamp(24px, 6vw, 96px); padding-right: 24px; }
+  .hero-copy .name { font: 500 clamp(44px, 6.2vw, 88px)/.96 var(--display); letter-spacing: -0.02em; }
+  .hero-copy .role { font: 400 16px/1.55 var(--sans); opacity: .82; max-width: 330px; margin-top: 22px; }
+  .hero-btn { margin-top: 30px; }
+  .hero-word {
+    position: relative; z-index: 2; margin-top: auto; text-align: center;
+    font: 400 clamp(84px, 19vw, 260px)/.8 var(--display); letter-spacing: -0.03em;
+    color: var(--paper); transform: translateY(.06em); user-select: none;
+  }
+
+  /* ---------- Твоё дело ---------- */
+  .intro-sec { padding: 150px 0 110px; }
+  .intro { display: grid; gap: 48px; align-items: end; }
+  .intro h1 { font-size: clamp(46px, 6.4vw, 88px); line-height: .98; letter-spacing: -0.02em; }
+  .intro h1 span { display: block; }
+  .intro h1 span:nth-child(2) { padding-left: .5em; }
+  .intro h1 span:nth-child(3) { padding-left: 1em; }
+  .intro .lead { margin: 36px 0 36px; max-width: 460px; }
+  .intro-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; }
+  .intro .small { margin-top: 22px; }
+  .intro-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 50% 25%; }
+
+  /* ---------- Узнаёшь себя ---------- */
+  .mosaic-sec { padding: 0 0 140px; }
+  .mosaic { display: grid; gap: 14px; }
+  .mosaic img { width: 100%; object-fit: cover; aspect-ratio: 3/4; }
+  .m-text h2 { margin-bottom: 26px; font-size: clamp(40px, 4.4vw, 60px); }
+  .m-text ul { list-style: none; padding: 0; margin: 0 0 26px; border-bottom: 1px solid var(--line); }
+  .m-text li { padding: 12px 0; border-top: 1px solid var(--line); color: var(--ink-2); line-height: 1.5; }
+  .reframe { color: var(--ink-2); }
+
+  /* ---------- Сравнение цен: таблица вместо карточек ---------- */
+  .compare-head h2 { max-width: 12ch; }
+  .compare-head .section-sub { margin: 26px 0 0; max-width: 46ch; }
+  .compare { margin-top: 64px; border-bottom: 1px solid var(--ink); }
+  .cmp-row, .cmp { display: grid; gap: 8px 24px; align-items: baseline; }
+  .cmp-row { padding: 0 0 14px; border-bottom: 1px solid var(--ink); font-size: 13px; color: var(--ink-3); }
+  .cmp { padding: 26px 0; border-top: 1px solid var(--line); }
+  .cmp-row + .cmp { border-top: 0; }
+  .cmp-name { font: 500 30px/1.05 var(--display); letter-spacing: -0.01em; }
+  .cmp-meta { font-size: 14px; color: var(--ink-3); margin-top: 6px; }
+  .cmp .m-label { display: none; font-size: 12px; color: var(--ink-3); }
+  .cmp-shop s { font-size: 17px; color: #8a8292; text-decoration-color: #b9accb; white-space: nowrap; }
+  .cmp-sup b { font: 500 34px/1 var(--sans); letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
+  .cmp-save { font: 500 17px/1 var(--sans); color: var(--lav-deep); white-space: nowrap; text-align: right; }
+  .disclaimer { margin-top: 22px; }
+
+  /* ---------- Направления ---------- */
+  .dirs-sec { padding: 140px 0 130px; }
+  .dirs-row1, .dirs-row3 { position: relative; z-index: 2; display: grid; gap: 24px; }
+  .dirs-text p { color: var(--ink-2); max-width: 400px; margin-top: 22px; }
+  .dirs-img img { width: 100%; object-fit: cover; aspect-ratio: 16/10; }
+  .giant {
+    position: relative; z-index: 1; text-align: center; user-select: none; pointer-events: none;
+    font: 400 clamp(120px, 26vw, 340px)/.8 var(--display); letter-spacing: -0.03em; color: var(--lav-ghost);
+  }
+  .dirs-side p { color: var(--ink-3); max-width: 400px; }
+  .dir-cards { display: grid; margin-top: 96px; border-top: 1px solid var(--ink); }
+  .dir-card { padding: 30px 0 34px; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+  .dir-card:first-child { border-top: 0; }
+  .dir-card h3 { font-size: 32px; margin-bottom: 8px; }
+  .dir-note { font: italic 500 20px/1.3 var(--display); color: var(--lav-deep); margin: 0 0 14px; }
+  .for { font-size: 15px; color: var(--ink-3); margin: 4px 0 22px; max-width: 46ch; }
+  .check { list-style: none; padding: 0; margin: 0 0 26px; font-size: 16px; }
+  .check li { padding: 10px 0; border-top: 1px solid var(--line); line-height: 1.45; }
+  .dir-link { margin-top: auto; align-self: flex-start; }
+  .learn { margin-top: 110px; padding-top: 34px; border-top: 1px solid var(--ink); display: grid; gap: 28px; }
+  .learn h3 { font-size: clamp(32px, 3.4vw, 44px); line-height: 1.05; margin-bottom: 16px; max-width: 13ch; }
+  .learn ul { margin: 0; padding: 0; list-style: none; display: grid; column-gap: 40px; }
+  .learn li { padding: 14px 0; border-top: 1px solid var(--line); font-size: 17px; line-height: 1.5; color: var(--ink-2); }
+
+  /* ---------- Тарифы ---------- */
+  .prices-head { display: grid; gap: 14px; margin-bottom: 72px; }
+  .prices-head .section-sub { margin: 0; max-width: 40ch; }
+  .plan-group { display: grid; gap: 22px; padding: 34px 0 56px; border-top: 1px solid var(--ink); }
+  .plan-group-title { font: italic 500 clamp(34px, 3.4vw, 46px)/1 var(--display); letter-spacing: -0.01em; color: var(--ink); margin: 0; }
+  .plans { display: grid; gap: 40px; }
+  .plan { display: flex; flex-direction: column; position: relative; }
+  .plan h3 { margin-bottom: 6px; }
+  .plan .desc { font-size: 15px; color: var(--ink-3); margin-bottom: 20px; }
+  .plan .check { margin-bottom: 0; font-size: 15px; }
+  .plan-price { margin-top: auto; padding-top: 28px; }
+  .amount { font: 400 56px/1 var(--sans); letter-spacing: -0.04em; }
+  .split { margin-top: 12px; font: 400 15px/1.4 var(--sans); color: var(--ink-2); }
+  .club { margin-top: 10px; font: 400 14px/1.45 var(--sans); color: var(--lav-deep); }
+  .club b { font-weight: 600; }
+  .plan .btn { margin-top: 26px; }
+  .plan.main { background: var(--ink); color: #efeaf3; padding: 38px 36px 36px; border-radius: 2px; }
+  .plan.main h3, .plan.main .amount { color: #fff; }
+  .plan.main h3 { font-size: 34px; }
+  .plan.main .desc { color: #c3bacd; }
+  .plan.main .check li { border-top-color: rgba(255,255,255,.16); }
+  .plan.main .split { color: #d9d0e4; }
+  .plan.main .club { color: #d8cbee; }
+  .addon { display: grid; gap: 22px; padding: 34px 0 0; border-top: 1px solid var(--ink); }
+  .addon-body { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px 40px; flex-wrap: wrap; }
+  .addon-body p { margin: 0; font-size: 15px; color: var(--ink-3); max-width: 38ch; }
+  .addon-right { display: flex; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
+  .addon-price { font: 400 40px/1 var(--sans); letter-spacing: -0.035em; }
+
+  /* ---------- Упаковка ---------- */
+  .pack-sec { padding: 150px 0 140px; }
+  .pack { display: grid; gap: 40px; align-items: center; }
+  .pack-imgs { display: grid; grid-template-columns: 1.2fr .8fr; gap: 14px; align-items: end; }
+  .pack-imgs img { width: 100%; object-fit: cover; aspect-ratio: 3/4; }
+  .pack-imgs img:last-child { margin-bottom: 120px; }
+  .pack h2 { margin-bottom: 24px; }
+  .pack p { color: var(--ink-2); }
+  .quote { font: italic 400 clamp(32px, 3.4vw, 46px)/1.1 var(--display); letter-spacing: -0.01em; color: var(--ink) !important; max-width: 19ch; margin: 40px 0 26px; text-indent: -.4em; }
+
+  /* ---------- Для кого ---------- */
+  .who-sec h2 { max-width: 14ch; }
+  .who { display: grid; margin-top: 56px; border-bottom: 1px solid var(--line); }
+  .who p { margin: 0; border-top: 1px solid var(--line); padding: 22px 0 24px; font: 400 26px/1.22 var(--display); color: var(--ink); }
+  .honest { margin-top: 30px; font-size: 15px; color: var(--ink-3); max-width: 60ch; }
+
+  /* ---------- Обо мне ---------- */
+  .about-sec { padding: 150px 0; }
+  .about { display: grid; gap: 48px; align-items: center; }
+  .about-photo { aspect-ratio: 3/4; overflow: hidden; }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; transform: scale(1.12); transform-origin: 50% 58%; }
+  .about h2 { margin-bottom: 28px; max-width: 10ch; }
+  .about p { color: var(--ink-2); max-width: 54ch; }
+  .stats { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 48px; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--ink); }
+  .stats b { display: block; font: 400 40px/1 var(--sans); letter-spacing: -0.035em; color: var(--ink); }
+  .stats b small { font: 400 16px var(--sans); margin-left: 4px; letter-spacing: 0; }
+  .stats span { display: block; font-size: 14px; line-height: 1.4; color: var(--ink-3); margin-top: 8px; }
+
+  /* ---------- Вопросы ---------- */
+  .faq-sec h2 { margin-bottom: 56px; }
+  .faq { border-top: 1px solid var(--ink); }
+  details { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; padding: 24px 48px 24px 0; position: relative; font: 500 25px/1.25 var(--display); }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font: 300 26px/1 var(--sans); color: var(--ink-3); transition: transform .2s; }
+  details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+  details p { font-size: 16px; color: var(--ink-2); max-width: 60ch; padding-bottom: 16px; }
+
+  /* ---------- Финал ---------- */
+  .final { position: relative; isolation: isolate; padding: 160px 0 140px; color: #fff; background: var(--ink); overflow: hidden; }
+  .final::before { content: ""; position: absolute; inset: 0; z-index: -2; background: url("img/gold.jpg") center / cover; filter: grayscale(.6); }
+  .final::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, rgba(44,37,51,.9) 0%, rgba(44,37,51,.7) 55%, rgba(44,37,51,.45) 100%); }
+  .final h2 { color: #fff; font-size: clamp(48px, 7.4vw, 108px); line-height: .96; letter-spacing: -0.025em; max-width: 13ch; margin: 0 0 34px; }
+  .final p { color: #e6def0; max-width: 440px; margin: 0 0 38px; }
+  .final-cta { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+  .final .link { color: #fff; text-decoration-color: rgba(255,255,255,.45); }
+  .final .link:hover { color: #fff; text-decoration-color: #fff; }
+
+  footer { padding: 44px 0 52px; font-size: 13px; color: var(--ink-3); }
+  footer .wrap { display: grid; gap: 14px; }
+  footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+  .footer-logo { font: 500 24px/1 var(--display); color: var(--ink); }
+
+  /* ---------- Окно оформления ---------- */
+  .modal-back { position: fixed; inset: 0; z-index: 50; background: rgba(28,22,32,.55); backdrop-filter: blur(4px); display: none; align-items: flex-end; justify-content: center; }
+  .modal-back.open { display: flex; }
+  .modal { background: var(--white); width: 100%; max-width: 470px; max-height: 92dvh; overflow-y: auto; border-radius: 14px 14px 0 0; padding: 28px 22px calc(22px + env(safe-area-inset-bottom)); position: relative; }
+  .modal h3 { font-size: 32px; padding-right: 48px; }
+  .sum { margin: 18px 0 24px; padding: 16px 0 18px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+  .sum .name { font-size: 14px; color: var(--ink-2); }
+  .sum s { display: block; font-size: 14px; color: #7a7284; margin-top: 6px; }
+  .sum b { display: block; font: 500 34px/1.1 var(--sans); letter-spacing: -0.03em; margin-top: 4px; }
+  .sum .split { margin-top: 6px; font-size: 14px; color: var(--lav-deep); }
+  .close { position: absolute; top: 14px; right: 12px; width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer; font: 300 30px/1 var(--sans); color: var(--ink-2); }
+  .close:hover { color: var(--ink); }
+  .field { display: block; margin-bottom: 14px; }
+  .field > span { display: block; font-size: 13px; color: var(--ink-2); margin-bottom: 6px; }
+  input[type=text], input[type=tel] { width: 100%; min-height: 52px; padding: 0 16px; border-radius: 2px; border: 1px solid #cfc7d6; background: #fff; font: 16px var(--sans); color: var(--ink); }
+  input:focus { outline: none; border-color: var(--lav); box-shadow: 0 0 0 3px rgba(140,122,169,.2); }
+  input.invalid { border-color: #b3412f; }
+  .field-error { font-size: 13px; color: #b3412f; margin-top: 6px; display: none; }
+  .field-error.show { display: block; }
+  .promo-row { display: flex; gap: 8px; }
+  .promo-row input { flex: 1; min-width: 0; }
+  .promo-row .btn { min-height: 52px; padding: 0 18px; }
+  .promo-msg { font-size: 13px; margin-top: 6px; min-height: 18px; }
+  .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--ink-3); margin: 6px 0 18px; }
+  .consent input { width: 22px; height: 22px; margin-top: 0; accent-color: var(--lav-deep); flex: none; }
+  .demo-note { font-size: 12px; color: var(--ink-3); text-align: center; margin: 12px 0 0; }
+
+  /* ---------- Нижняя панель (только телефон): плоская, во всю ширину ---------- */
+  .sticky-cta {
+    display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    align-items: center; justify-content: space-between; gap: 12px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom)) 20px;
+    background: rgba(243,240,236,.96); border-top: 1px solid var(--line);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    color: var(--ink-2); font: 400 14px/1.3 var(--sans); transform: translateY(110%); transition: transform .25s;
+  }
+  .sticky-cta.show { transform: none; }
+  .sticky-cta .btn { min-height: 46px; padding: 0 24px; background: var(--ink); color: #fff; }
+
+  /* ================= Планшет и шире ================= */
+  @media (min-width: 720px) {
+    .cmp-row, .cmp { grid-template-columns: 1.7fr 1fr 1fr 64px; }
+    .dir-cards { grid-template-columns: 1fr 1fr; }
+    .dir-card { padding: 34px 32px 36px; border-top: 0; border-left: 1px solid var(--line); }
+    .dir-card:first-child { padding-left: 0; border-left: 0; }
+    .who { grid-template-columns: 1fr 1fr; column-gap: 56px; border-bottom: 0; }
+    .modal-back { align-items: center; }
+    .modal { border-radius: 4px; padding: 34px 32px 30px; }
+  }
+
+  /* ================= Компьютер ================= */
+  @media (min-width: 980px) {
+    body { padding: 40px 24px; }
+    .sheet { border-radius: 28px; box-shadow: 0 40px 80px -50px rgba(44,37,51,.35); }
+    .nav-links { display: flex; }
+    .intro { grid-template-columns: 1.15fr .85fr; gap: 88px; }
+    .intro-photo { margin-bottom: -40px; }
+    .mosaic { grid-template-columns: 1fr 1fr 1.15fr; grid-template-areas: 'a b t'; gap: 20px; align-items: end; }
+    .m-a { grid-area: a; } .m-b { grid-area: b; margin-bottom: 72px; } .m-text { grid-area: t; padding-left: 28px; align-self: center; }
+    .mosaic img { max-height: 540px; }
+    .compare-head { display: grid; grid-template-columns: 1.7fr 2.1fr; column-gap: 24px; align-items: end; }
+    .compare-head .section-sub { margin: 0 0 8px; }
+    .dirs-row1 { grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: start; }
+    .dirs-row1 .dirs-text { padding-top: 20px; }
+    .giant { margin: -36px 0 0; }
+    .dirs-row3 { grid-template-columns: 1fr 1fr; gap: 40px; margin-top: -110px; align-items: end; }
+    .dirs-img.b { width: 88%; margin-left: 6%; }
+    .dir-cards { grid-template-columns: 1.3fr 1fr 1fr; }
+    .dir-card:first-child { padding-right: 40px; }
+    .learn { grid-template-columns: 1fr 2fr; gap: 40px; }
+    .learn ul { grid-template-columns: 1fr 1fr; }
+    #prices { padding: 150px 0 140px; }
+    .prices-head { grid-template-columns: 1fr 2fr; align-items: end; }
+    .plan-group, .addon { grid-template-columns: 1fr 2fr; gap: 40px; }
+    .plans.perfume { grid-template-columns: 1.3fr 1fr; align-items: stretch; }
+    .plans.cosmetics { grid-template-columns: 1fr 1fr; }
+    .plans.perfume .plan:not(.main) { padding-top: 38px; }
+    .pack { grid-template-columns: 1.05fr .95fr; gap: 88px; }
+    .about { grid-template-columns: 1fr .9fr; gap: 96px; }
+    .about-photo { order: 2; margin-top: -40px; }
+    .faq-sec .wrap { display: grid; grid-template-columns: 1fr 2fr; column-gap: 40px; }
+    .faq-sec h2 { grid-column: 1 / -1; }
+    .faq { grid-column: 2; }
+  }
+
+  /* ================= Телефон ================= */
+  @media (max-width: 719px) {
+    body { font-size: 16px; }
+    section { padding: 72px 0; }
+    .wrap { padding-left: 20px; padding-right: 20px; }
+    h2 { font-size: 40px; }
+    h3 { font-size: 26px; }
+    .lead { font-size: 17px; }
+
+    .nav { margin: 12px 12px 0; padding: 14px 16px; border-radius: 16px; }
+    .nav-logo { font-size: 20px; }
+    .nav-cta { display: none; }
+    .hero { min-height: 88svh; }
+    .hero-portrait {
+      left: 0; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: cover; object-position: 58% 0;
+      -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 96%); mask-image: linear-gradient(to bottom, #000 55%, transparent 96%);
+    }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,.3) 0%, transparent 18%, transparent 46%, rgba(20,18,24,.8) 78%); }
+    .hero-copy { margin-top: auto; margin-bottom: 18px; padding: 0 20px; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
+    .hero-copy .name { font-size: 46px; line-height: .98; }
+    .hero-copy .role { font-size: 15px; line-height: 1.45; max-width: 300px; margin-top: 14px; }
+    .hero-btn { width: 100%; min-height: 54px; font-size: 16px; margin-top: 22px; text-shadow: none; }
+    .hero-word { margin-top: 0; font-size: 21vw; letter-spacing: -0.045em; transform: translateY(.1em); }
+
+    .intro-sec { padding: 80px 0 64px; }
+    .intro { gap: 40px; }
+    .intro h1 { font-size: 50px; line-height: .98; }
+    .intro .lead { margin: 26px 0 28px; }
+    .intro-cta { flex-direction: column; align-items: stretch; gap: 20px; }
+    .intro-cta .btn { width: 100%; min-height: 54px; font-size: 16px; }
+    .intro-cta .link { align-self: center; }
+    .intro .small { text-align: center; }
+
+    .mosaic-sec { padding: 0 0 80px; }
+    .mosaic { grid-template-columns: 1.2fr .8fr; gap: 10px; align-items: end; }
+    .m-text { grid-column: 1 / -1; order: -1; margin-bottom: 18px; }
+    .m-b { margin-bottom: 40px; }
+    .m-text ul { display: none; }
+
+    .compare { margin-top: 40px; }
+    .cmp-row { display: none; }
+    .cmp { grid-template-columns: 1fr 1fr auto; grid-template-areas: 'item item item' 'shop sup save'; padding: 22px 0; row-gap: 16px; }
+    .cmp:first-of-type { border-top: 1px solid var(--ink); }
+    .cmp-item { grid-area: item; } .cmp-shop { grid-area: shop; } .cmp-sup { grid-area: sup; } .cmp-save { grid-area: save; align-self: end; padding-bottom: 3px; }
+    .cmp .m-label { display: block; margin-bottom: 6px; }
+    .cmp-name { font-size: 28px; }
+    .cmp-shop s { font-size: 16px; }
+    .cmp-sup b { font-size: 26px; }
+    .cmp-save { font-size: 15px; }
+
+    .dirs-sec { padding: 80px 0 72px; }
+    .dirs-img.b { display: none; }
+    .dirs-img.a img { aspect-ratio: 4/3; }
+    .giant { z-index: 3; font-size: 30vw; margin: -0.42em 0 8px -4px; text-align: left; color: #c9bddb; mix-blend-mode: multiply; }
+    .dir-cards { margin-top: 48px; }
+    .dir-card h3 { font-size: 30px; }
+    .check { font-size: 15px; }
+    .learn { margin-top: 64px; padding-top: 26px; }
+    .learn li { font-size: 16px; }
+
+    .prices-head { margin-bottom: 44px; }
+    .plan-group { padding: 24px 0 48px; gap: 26px; }
+    .plans { gap: 44px; }
+    .plan.main { padding: 30px 22px 26px; margin: 0 -8px; }
+    .plan.main h3 { font-size: 30px; }
+    .amount { font-size: 48px; }
+    .plan .btn { min-height: 54px; font-size: 16px; }
+    .addon-body { flex-direction: column; align-items: stretch; }
+    .addon-right { justify-content: space-between; align-items: flex-end; }
+    .addon .btn { width: 100%; min-height: 54px; }
+
+    .pack-sec { padding: 80px 0; }
+    .pack { gap: 32px; }
+    .pack-imgs { grid-template-columns: 1fr; }
+    .pack-imgs img:last-child { display: none; }
+    .pack-imgs img:first-child { aspect-ratio: 16/11; }
+    .quote { font-size: 31px; max-width: none; margin-top: 28px; text-indent: -.35em; padding-left: .35em; }
+
+    .who { margin-top: 32px; }
+    .who p { font-size: 23px; padding: 16px 0 18px; }
+
+    .about-sec { padding: 80px 0; }
+    .about { gap: 32px; }
+    .about-photo { aspect-ratio: 4/5; }
+    .stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .stats b { font-size: 32px; }
+    .stats span { font-size: 12px; line-height: 1.35; }
+
+    .faq-sec h2 { margin-bottom: 32px; }
+    summary { font-size: 22px; }
+    .final { padding: 96px 0 104px; }
+    .final h2 { font-size: 50px; }
+    .final-cta { flex-direction: column; align-items: stretch; gap: 22px; }
+    .final-cta .btn { width: 100%; min-height: 54px; }
+    .final-cta .link { align-self: center; }
+    footer { padding-bottom: 110px; }
+
+    .modal h3 { font-size: 28px; }
+    .modal button[type=submit] { position: sticky; bottom: 0; min-height: 56px; }
+    .sticky-cta { display: flex; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header class="hero" id="top">
+    <img class="hero-portrait" src="img/daria-bw.jpg" alt="Дарья Казанкова">
+    <nav class="nav" aria-label="Меню">
+      <a class="nav-logo" href="#top">Королевство Ароматов</a>
+      <div class="nav-links">
+        <a href="#compare">Цены</a>
+        <a href="#directions">Направления</a>
+        <a href="#prices">Стоимость</a>
+        <a href="#about">Обо мне</a>
+        <a href="#faq">Вопросы</a>
+      </div>
+      <a class="nav-cta" href="#prices">Выбрать направление</a>
+    </nav>
+    <div class="hero-copy">
+      <div class="name">Дарья Казанкова</div>
+      <div class="role">Парфюмерный эксперт, в профессии 7+&nbsp;лет. Доступ к поставщикам оригинальной парфюмерии и наставничество.</div>
+      <a class="btn btn-white hero-btn" href="#prices">Выбрать направление</a>
+    </div>
+    <div class="hero-word" aria-hidden="true">ароматы</div>
+  </header>
+
+  <main>
+    <section class="intro-sec">
+      <div class="wrap intro">
+        <div>
+          <h1><span>Твоё дело.</span> <span>Твои правила.</span> <span>Твой доход.</span></h1>
+          <p class="lead">Доступ к проверенным поставщикам оригинальной парфюмерии, корейской и люкс-косметики — и личная поддержка эксперта, чтобы увереннее сделать первые шаги.</p>
+          <div class="intro-cta">
+            <a class="btn btn-fill" href="#prices">Выбрать направление</a>
+            <a class="link" href="#compare">Сравнить цены</a>
+          </div>
+          <p class="small">Можно оплатить Долями — 4 платежа без переплаты</p>
+        </div>
+        <div class="intro-photo"><img src="img/daria-mirror.jpg" alt="Дарья Казанкова у зеркала"></div>
+      </div>
+    </section>
+
+    <section class="mosaic-sec">
+      <div class="wrap mosaic">
+        <img class="m-a" src="img/hand.jpg" alt="Флакон духов в руке" loading="lazy">
+        <img class="m-b" src="img/luxe-flatlay.jpg" alt="Люксовая косметика и парфюмерия" loading="lazy">
+        <div class="m-text">
+          <h2>Узнаёшь себя?</h2>
+          <ul>
+            <li>Устала работать на кого-то и хочешь сама распоряжаться временем</li>
+            <li>Давно думаешь о своём деле, но останавливают страх и отсутствие опыта</li>
+            <li>Кажется, что для старта нужны большие вложения</li>
+          </ul>
+          <p class="reframe">Начать в парфюмерной сфере можно без закупки на десятки тысяч. Я расскажу, с чего начать без предварительной закупки и как постепенно перейти к своим закупкам и продажам.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare" class="ruled">
+      <div class="wrap">
+        <div class="compare-head">
+          <h2>Цены поставщика и&nbsp;розницы</h2>
+          <p class="section-sub">Один и тот же оригинальный товар: сколько он стоит в крупном онлайн-магазине по акции и сколько — у поставщика.</p>
+        </div>
+        <div class="compare">
+          <div class="cmp-row" aria-hidden="true"><span>Товар</span><span>В магазине по акции</span><span>У поставщика</span><span></span></div>
+          <article class="cmp">
+            <div class="cmp-item"><div class="cmp-name">Devil's Intrigue</div><div class="cmp-meta">Haute Fragrance Co., парфюмерная вода, 75 мл</div></div>
+            <div class="cmp-shop"><span class="m-label">В магазине по акции</span><s class="num">31&#8239;500 ₽</s></div>
+            <div class="cmp-sup"><span class="m-label">У поставщика</span><b class="num">16&#8239;771<span class="rub">₽</span></b></div>
+            <div class="cmp-save num">&minus;47%</div>
+          </article>
+          <article class="cmp">
+            <div class="cmp-item"><div class="cmp-name">Guidance 46</div><div class="cmp-meta">Amouage, экстракт духов, 100 мл</div></div>
+            <div class="cmp-shop"><span class="m-label">В магазине по акции</span><s class="num">64&#8239;597 ₽</s></div>
+            <div class="cmp-sup"><span class="m-label">У поставщика</span><b class="num">26&#8239;681<span class="rub">₽</span></b></div>
+            <div class="cmp-save num">&minus;59%</div>
+          </article>
+          <article class="cmp">
+            <div class="cmp-item"><div class="cmp-name">Blue Talisman</div><div class="cmp-meta">Ex Nihilo, экстракт духов, 100 мл</div></div>
+            <div class="cmp-shop"><span class="m-label">В магазине по акции</span><s class="num">50&#8239;150 ₽</s></div>
+            <div class="cmp-sup"><span class="m-label">У поставщика</span><b class="num">22&#8239;014<span class="rub">₽</span></b></div>
+            <div class="cmp-save num">&minus;56%</div>
+          </article>
+          <article class="cmp">
+            <div class="cmp-item"><div class="cmp-name">Oud for Greatness</div><div class="cmp-meta">Initio Parfums Privés, крем для тела, 200 мл</div></div>
+            <div class="cmp-shop"><span class="m-label">В магазине по акции</span><s class="num">12&#8239;150 ₽</s></div>
+            <div class="cmp-sup"><span class="m-label">У поставщика</span><b class="num">6&#8239;183<span class="rub">₽</span></b></div>
+            <div class="cmp-save num">&minus;49%</div>
+          </article>
+        </div>
+        <p class="disclaimer">Цены на 22–23.10.2026, могут меняться. Разница в цене — ещё не прибыль: учитывай доставку, налоги, упаковку и маркировку «Честный знак».</p>
+      </div>
+    </section>
+
+    <section id="directions" class="ruled dirs-sec">
+      <div class="wrap">
+        <div class="dirs-row1">
+          <div class="dirs-text">
+            <h2>Три направления. Выбери то, что ближе тебе</h2>
+            <p>По своим интересам, целям и возможностям. Можно начать с одного направления и расширяться потом.</p>
+          </div>
+          <div class="dirs-img a"><img src="img/hourglass.jpg" alt="Палетки люкс-косметики" loading="lazy"></div>
+        </div>
+        <div class="giant" aria-hidden="true">своё</div>
+        <div class="dirs-row3">
+          <div class="dirs-img b"><img src="img/palettes.jpg" alt="Палетки и косметички" loading="lazy"></div>
+          <div class="dirs-side">
+            <p>Не нужно изобретать всё с нуля. Изучай ассортимент, знакомься с условиями и шаг за шагом выстраивай своё дело, опираясь на мой опыт.</p>
+          </div>
+        </div>
+
+        <div class="dir-cards">
+          <article class="dir-card main">
+            <h3>Оригинальная парфюмерия</h3>
+            <p class="dir-note">с личным наставничеством</p>
+            <p class="for">Для тех, кто хочет войти в мир нишевых и люксовых ароматов и развивать свои продажи.</p>
+            <ul class="check">
+              <li>Два поставщика оригинальной парфюмерии</li>
+              <li>Кремы для тела THCF и Initio в ассортименте</li>
+              <li>Поставщик упаковки и атомайзеров — в подарок</li>
+              <li>Месяц моего личного наставничества</li>
+            </ul>
+            <a class="link dir-link" href="#prices">Смотреть тарифы</a>
+          </article>
+          <article class="dir-card">
+            <h3>Корейская косметика</h3>
+            <p class="for">Для бьюти-мастеров, блогеров, владельцев магазинов и всех, кто хочет попробовать себя в торговле косметикой.</p>
+            <ul class="check">
+              <li>Два поставщика корейской косметики</li>
+              <li>Ассортимент и условия сотрудничества</li>
+              <li>Возможность оценить направление для своего проекта</li>
+            </ul>
+            <a class="link dir-link" href="#prices">Смотреть тариф</a>
+          </article>
+          <article class="dir-card">
+            <h3>Люкс-косметика</h3>
+            <p class="for">Для тех, кому близок премиальный сегмент и кто хочет расширить предложение для своих клиентов.</p>
+            <ul class="check">
+              <li>Один поставщик люкс-косметики</li>
+              <li>Ассортимент и условия сотрудничества</li>
+            </ul>
+            <a class="link dir-link" href="#prices">Смотреть тариф</a>
+          </article>
+        </div>
+
+        <div class="learn">
+          <div>
+            <h3>Чему научу в парфюмерном направлении</h3>
+            <p class="small">Моя задача — не просто передать контакты, а помочь увереннее сделать первые шаги.</p>
+          </div>
+          <ul>
+            <li>Разбираться в нишевой и люксовой парфюмерии</li>
+            <li>Понимать звучание ароматов, чтобы грамотно презентовать их покупателям</li>
+            <li>Ориентироваться в ассортименте и осознанно выбирать товар</li>
+            <li>Разбираться в тонкостях закупок и работы с поставщиками</li>
+            <li>Выстраивать предложение для своей аудитории</li>
+            <li>Продумывать упаковку, презентацию и общение с клиентами</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="prices" class="tinted">
+      <div class="wrap">
+        <div class="prices-head">
+          <h2>С чего начнём?</h2>
+          <p class="section-sub">Оплата картой или Долями — 4 платежа раз в две недели, без переплаты.</p>
+        </div>
+
+        <div class="plan-group">
+          <h3 class="plan-group-title">Парфюмерия</h3>
+          <div class="plans perfume">
+            <article class="plan main">
+              <h3>Полный пакет</h3>
+              <p class="desc">Оригинальная парфюмерия: всё для старта в направлении</p>
+              <ul class="check">
+                <li>Два поставщика парфюмерии</li>
+                <li>Поставщик упаковки и атомайзеров в подарок</li>
+                <li>Месяц личного наставничества</li>
+              </ul>
+              <div class="plan-price">
+                <div class="amount num">35&#8239;000<span class="rub">₽</span></div>
+                <div class="split num">или 4 × 8&#8239;750 ₽ Долями</div>
+                <div class="club">Для «Мать в квадрате» — <b class="num">30&#8239;000 ₽</b> по промокоду</div>
+              </div>
+              <button class="btn btn-white btn-block" data-plan="full">Начать с полным пакетом</button>
+            </article>
+            <article class="plan">
+              <h3>Один поставщик парфюмерии</h3>
+              <p class="desc">Если хочется начать с меньшего</p>
+              <ul class="check">
+                <li>Один поставщик оригинальной парфюмерии</li>
+                <li>Две недели личной поддержки</li>
+              </ul>
+              <div class="plan-price">
+                <div class="amount num">17&#8239;000<span class="rub">₽</span></div>
+                <div class="split num">или 4 × 4&#8239;250 ₽ Долями</div>
+              </div>
+              <button class="btn btn-line btn-block" data-plan="one">Выбрать</button>
+            </article>
+          </div>
+        </div>
+
+        <div class="plan-group">
+          <h3 class="plan-group-title">Косметика</h3>
+          <div class="plans cosmetics">
+            <article class="plan">
+              <h3>Корейская косметика</h3>
+              <p class="desc">Два поставщика и условия сотрудничества</p>
+              <ul class="check">
+                <li>Два поставщика корейской косметики</li>
+                <li>Ассортимент и условия работы</li>
+              </ul>
+              <div class="plan-price">
+                <div class="amount num">20&#8239;000<span class="rub">₽</span></div>
+                <div class="split num">или 4 × 5&#8239;000 ₽ Долями</div>
+              </div>
+              <button class="btn btn-line btn-block" data-plan="korea">Выбрать</button>
+            </article>
+            <article class="plan">
+              <h3>Люкс-косметика</h3>
+              <p class="desc">Премиальный сегмент</p>
+              <ul class="check">
+                <li>Один поставщик люкс-косметики</li>
+                <li>Ассортимент и условия работы</li>
+              </ul>
+              <div class="plan-price">
+                <div class="amount num">15&#8239;000<span class="rub">₽</span></div>
+                <div class="split num">или 4 × 3&#8239;750 ₽ Долями</div>
+              </div>
+              <button class="btn btn-line btn-block" data-plan="lux">Выбрать</button>
+            </article>
+          </div>
+        </div>
+
+        <div class="addon">
+          <h3 class="plan-group-title">Упаковка и атомайзеры</h3>
+          <div class="addon-body">
+            <p>Дополнение к любому тарифу. В полном пакете — в подарок.</p>
+            <div class="addon-right">
+              <div>
+                <div class="addon-price num">7&#8239;000<span class="rub">₽</span></div>
+                <div class="club">Для «Мать в квадрате» — <b class="num">5&#8239;000 ₽</b></div>
+              </div>
+              <button class="btn btn-line" data-plan="pack">Добавить упаковку</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pack-sec">
+      <div class="wrap pack">
+        <div class="pack-imgs">
+          <img src="img/gift.jpg" alt="Подарочная упаковка" loading="lazy">
+          <img src="img/ysl.jpg" alt="Косметика YSL" loading="lazy">
+        </div>
+        <div>
+          <h2>Покупатель запоминает не только аромат</h2>
+          <p>Атомайзеры, коробочки, пакеты, оформление заказа — всё это формирует восприятие твоего бренда. Важно, как ты преподнесла аромат, насколько приятно было получить заказ и захотелось ли вернуться снова.</p>
+          <p class="quote">«Упаковка — это часть твоего лица как&nbsp;предпринимателя»</p>
+          <p class="small">Поэтому в полном парфюмерном пакете поставщик упаковки и атомайзеров идёт в подарок.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ruled who-sec">
+      <div class="wrap">
+        <h2>Этот проект для тебя, если ты</h2>
+        <div class="who">
+          <p>устала работать на кого-то и хочешь постепенно выстраивать своё дело;</p>
+          <p>в декрете и рассматриваешь новые возможности для заработка;</p>
+          <p>уже работаешь в бьюти-сфере и хочешь расширить ассортимент;</p>
+          <p>ведёшь блог и хочешь развивать продажи через свою аудиторию;</p>
+          <p>мечтаешь о своём магазине, бутике или онлайн-проекте;</p>
+          <p>пока не готова закупать товар, но хочешь понять, какие ещё есть варианты входа в нишу.</p>
+        </div>
+        <p class="honest">Поставщики и наставничество — инструменты для старта. Результат зависит от твоих действий, вложений, спроса и умения выстраивать продажи.</p>
+      </div>
+    </section>
+
+    <section id="about" class="ruled about-sec">
+      <div class="wrap about">
+        <div class="about-photo"><img src="img/daria-studio.jpg" alt="Дарья Казанкова" loading="lazy"></div>
+        <div>
+          <h2>Меня зовут Дарья Казанкова</h2>
+          <p class="lead">Я парфюмерный эксперт с опытом более 7 лет. Парфюмерия стала для меня не просто работой, а целым миром, которым хочу делиться.</p>
+          <p>Я понимаю, как сложно начинать новое направление: много вопросов, неизвестные условия, сомнения и страх ошибиться. Мне важно, чтобы ты понимала, что именно приобретаешь и как использовать полученные знания.</p>
+          <p>Я не обещаю лёгких денег и мгновенных результатов. Я предлагаю знания, инструменты и поддержку, которые помогут увереннее двигаться к своей цели.</p>
+          <div class="stats">
+            <div><b class="num">7+</b><span>лет в парфюмерии</span></div>
+            <div><b class="num">3</b><span>направления</span></div>
+            <div><b class="num">1<small>мес</small></b><span>наставничества</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="ruled faq-sec">
+      <div class="wrap">
+        <h2>Частые вопросы</h2>
+        <div class="faq">
+          <details><summary>Что я получу после оплаты?</summary><p>После оплаты я свяжусь с тобой в Telegram или по телефону, который ты укажешь, передам доступ к поставщикам по выбранному направлению и расскажу об условиях сотрудничества. В парфюмерных пакетах сразу стартует наставничество.</p></details>
+          <details><summary>Как оплатить Долями?</summary><p>На странице оплаты Т-Банка выбери «Долями»: сумма делится на 4 платежа раз в две недели, без переплаты. Доступно при одобрении сервисом Т-Банка.</p></details>
+          <details><summary>Как получить цену для участниц «Мать в квадрате»?</summary><p>Введи промокод сообщества при оформлении — цена пересчитается автоматически.</p></details>
+          <details><summary>Нужно ли сразу закупать товар?</summary><p>Нет. Можно начать с изучения ассортимента и условий, определиться с бюджетом и аудиторией. Я расскажу, как войти в нишу без предварительной закупки.</p></details>
+          <details><summary>Нужна ли маркировка «Честный знак»?</summary><p>Да, парфюмерия подлежит обязательной маркировке. В наставничестве разберём, как с этим работать, чтобы продавать по закону.</p></details>
+          <details><summary>Гарантируете ли вы доход?</summary><p>Нет, и честно говорю об этом заранее. Я даю доступ к поставщикам, знания и поддержку. Доход зависит от твоих действий, вложений и спроса.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <h2>Твоё дело может начаться с&nbsp;одного решения</h2>
+        <p>Выбери направление и оплати онлайн — или напиши мне, если хочешь сначала задать вопросы и подобрать формат.</p>
+        <div class="final-cta">
+          <a class="btn btn-white" href="#prices">Выбрать направление</a>
+          <a class="link" href="#" data-ask>Написать «БАЗА» в Telegram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-logo">Королевство Ароматов</div>
+      <nav>
+        <a href="#">Публичная оферта</a>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Условия возврата</a>
+        <a href="#" data-ask>Связаться</a>
+      </nav>
+      <div>Дарья Казанкова · ФИО / ИНН / статус — заполнить · почта — заполнить</div>
+      <div>Часть фото в демо: Unsplash</div>
+    </div>
+  </footer>
+</div>
+
+<div class="sticky-cta" id="sticky"><span>От 7&#8239;000 ₽, можно Долями</span><a class="btn" href="#prices">Выбрать</a></div>
+
+<div class="modal-back" id="checkout" role="dialog" aria-modal="true" aria-labelledby="co-title">
+  <form class="modal" id="co-form" novalidate>
+    <button type="button" class="close" aria-label="Закрыть" data-close>&times;</button>
+    <h3 id="co-title">Оформление</h3>
+    <div class="sum"><div class="name" id="co-name"></div><s id="co-old" class="num" hidden></s><b id="co-price" class="num"></b><div class="split num" id="co-split"></div></div>
+    <label class="field"><span>Имя</span><input type="text" name="name" autocomplete="name"><div class="field-error" data-for="name">Напиши, как к тебе обращаться</div></label>
+    <label class="field"><span>Телефон</span><input type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="+7"><div class="field-error" data-for="phone">Нужен телефон для связи</div></label>
+    <label class="field"><span>Telegram — чтобы я связалась с тобой</span><input type="text" name="tg" placeholder="@username" autocapitalize="off" autocorrect="off"></label>
+    <div class="field" id="promo-box"><span>Промокод «Мать в квадрате»</span>
+      <div class="promo-row"><input type="text" name="promo" placeholder="если есть" aria-label="Промокод" autocapitalize="characters"><button type="button" class="btn btn-line" id="promo-apply">Применить</button></div>
+      <div class="promo-msg" id="promo-msg"></div>
+    </div>
+    <div class="consent"><input type="checkbox" id="co-consent"><label for="co-consent">Принимаю условия оферты и даю согласие на обработку персональных данных</label></div>
+    <div class="field-error" data-for="consent" style="margin:-10px 0 14px">Нужно согласие с офертой</div>
+    <button class="btn btn-fill btn-block" type="submit">Перейти к оплате</button>
+    <p class="demo-note">Картой или Долями через Т-Банк</p>
+  </form>
+</div>
+
+<script>
+  // Демо: проверка промокода и создание платежа в боевой версии — на сервере
+  const PLANS = {
+    full:  { name: 'Оригинальная парфюмерия — полный пакет', price: 35000, special: 30000 },
+    one:   { name: 'Один поставщик парфюмерии', price: 17000 },
+    pack:  { name: 'Поставщик упаковки и атомайзеров', price: 7000, special: 5000 },
+    korea: { name: 'Корейская косметика', price: 20000 },
+    lux:   { name: 'Люкс-косметика', price: 15000 },
+  };
+  const DEMO_PROMO = 'МАТЬ';
+  const fmt = (n) => n.toLocaleString('ru-RU').replace(/\s/g, ' ') + ' ₽';
+  const back = document.getElementById('checkout');
+  const form = document.getElementById('co-form');
+  let current = null, promoOk = false;
+
+  function render() {
+    const p = PLANS[current];
+    const discounted = promoOk && p.special;
+    const price = discounted ? p.special : p.price;
+    document.getElementById('co-name').textContent = p.name;
+    document.getElementById('co-price').textContent = fmt(price);
+    document.getElementById('co-split').textContent = 'или 4 × ' + fmt(Math.round(price / 4)) + ' Долями';
+    const old = document.getElementById('co-old');
+    old.hidden = !discounted;
+    old.textContent = fmt(p.price);
+    document.getElementById('promo-box').style.display = p.special ? '' : 'none';
+  }
+  function showError(key, on) {
+    const el = form.querySelector(`.field-error[data-for="${key}"]`);
+    if (el) el.classList.toggle('show', on);
+    const input = form.elements[key];
+    if (input && input.classList) input.classList.toggle('invalid', on);
+  }
+  document.querySelectorAll('[data-plan]').forEach((b) => b.addEventListener('click', () => {
+    current = b.dataset.plan; promoOk = false;
+    form.reset(); document.getElementById('promo-msg').textContent = '';
+    ['name', 'phone', 'consent'].forEach((k) => showError(k, false));
+    render(); back.classList.add('open');
+  }));
+  const close = () => back.classList.remove('open');
+  back.addEventListener('click', (e) => { if (e.target === back || e.target.hasAttribute('data-close')) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  document.getElementById('promo-apply').addEventListener('click', () => {
+    const v = form.promo.value.trim().toUpperCase();
+    const msg = document.getElementById('promo-msg');
+    promoOk = v === DEMO_PROMO;
+    msg.textContent = promoOk ? 'Промокод применён' : (v ? 'Такого промокода нет' : '');
+    msg.style.color = promoOk ? '#2f7a45' : '#b3412f';
+    render();
+  });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const noName = !form.name.value.trim();
+    const noPhone = !form.phone.value.trim();
+    const noConsent = !document.getElementById('co-consent').checked;
+    showError('name', noName); showError('phone', noPhone); showError('consent', noConsent);
+    if (noName || noPhone || noConsent) return;
+    alert('Демо-версия: здесь откроется страница оплаты Т-Банка (карта или Долями).');
+  });
+  document.querySelectorAll('[data-ask]').forEach((a) => a.addEventListener('click', (e) => {
+    e.preventDefault(); alert('Сюда поставим ссылку на Telegram Дарьи.');
+  }));
+
+  // Липкая кнопка на телефоне: видна, пока на экране нет ни первого экрана, ни тарифов
+  const sticky = document.getElementById('sticky');
+  const visible = new Set();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => en.isIntersecting ? visible.add(en.target.id) : visible.delete(en.target.id));
+    sticky.classList.toggle('show', visible.size === 0);
+  });
+  ['top', 'prices'].forEach((id) => io.observe(document.getElementById(id)));
+</script>
+</body>
+</html>
