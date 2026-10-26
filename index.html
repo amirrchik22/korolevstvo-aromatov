@@ -613,7 +613,6 @@
             <p class="for">Для тех, кто хочет войти в мир нишевых и люксовых ароматов и развивать свои продажи.</p>
             <ul class="check">
               <li>Два поставщика оригинальной парфюмерии</li>
-              <li>Кремы для тела THCF и Initio в ассортименте</li>
               <li>Поставщик упаковки и атомайзеров — в подарок</li>
               <li>Месяц моего личного наставничества</li>
             </ul>
@@ -652,6 +651,7 @@
             <li>Разбираться в тонкостях закупок и работы с поставщиками</li>
             <li>Выстраивать предложение для своей аудитории</li>
             <li>Продумывать упаковку, презентацию и общение с клиентами</li>
+            <li>Красиво подавать товар и создавать контент — фото и видео для соцсетей</li>
           </ul>
         </div>
       </div>
@@ -765,6 +765,7 @@
       <div class="wrap">
         <h2>Этот проект для тебя, если ты</h2>
         <div class="who">
+          <p>не хочешь переплачивать за парфюм в магазинах, а хочешь покупать оригинал для себя, подруг и всей семьи;</p>
           <p>устала работать на кого-то и хочешь постепенно выстраивать своё дело;</p>
           <p>в декрете и рассматриваешь новые возможности для заработка;</p>
           <p>уже работаешь в бьюти-сфере и хочешь расширить ассортимент;</p>
@@ -799,11 +800,11 @@
         <aside class="faq-ask">
           <img src="img/daria-face.jpg" alt="Дарья Казанкова" loading="lazy">
           <p class="faq-ask-title">Не нашла ответ на свой вопрос?</p>
-          <p>Напиши мне слово «БАЗА» — расскажу подробнее о направлении и помогу выбрать формат. Отвечаю лично.</p>
-          <a class="btn btn-fill" href="#" data-ask>Написать в Telegram</a>
+          <p>Напиши мне слово «БАЗА» в любой мессенджер — расскажу подробнее о направлении и помогу выбрать формат. Отвечаю лично.</p>
+          <a class="btn btn-fill" href="#" data-ask>Написать мне</a>
         </aside>
         <div class="faq">
-          <details><summary>Что я получу после оплаты?</summary><p>После оплаты я свяжусь с тобой в Telegram или по телефону, который ты укажешь, передам доступ к поставщикам по выбранному направлению и расскажу об условиях сотрудничества. В парфюмерных пакетах сразу стартует наставничество.</p></details>
+          <details><summary>Что я получу после оплаты?</summary><p>После оплаты я свяжусь с тобой в мессенджере или по телефону, который ты укажешь, передам доступ к поставщикам по выбранному направлению и расскажу об условиях сотрудничества. В парфюмерных пакетах сразу стартует наставничество.</p></details>
           <details><summary>Как оплатить Долями?</summary><p>На странице оплаты Т-Банка выбери «Долями»: сумма делится на 4 платежа раз в две недели, без переплаты. Доступно при одобрении сервисом Т-Банка.</p></details>
           <details><summary>Как получить цену для участниц «Мать в квадрате»?</summary><p>Введи промокод сообщества при оформлении — цена пересчитается автоматически.</p></details>
           <details><summary>Можно начать с одного поставщика?</summary><p>Да. Один поставщик оригинальной парфюмерии стоит 17&#8239;000 ₽, в него входят две недели моей личной поддержки. Поставщика упаковки и атомайзеров можно добавить отдельно.</p></details>
@@ -820,7 +821,7 @@
         <p>Выбери направление и оплати онлайн — или напиши мне, если хочешь сначала задать вопросы и подобрать формат.</p>
         <div class="final-cta">
           <a class="btn btn-white" href="#prices">Выбрать направление</a>
-          <a class="link" href="#" data-ask>Написать «БАЗА» в Telegram</a>
+          <a class="link" href="#" data-ask>Написать «БАЗА» в мессенджер</a>
         </div>
       </div>
     </section>
@@ -850,7 +851,7 @@
     <div class="sum"><div class="name" id="co-name"></div><s id="co-old" class="num" hidden></s><b id="co-price" class="num"></b><div class="split num" id="co-split"></div></div>
     <label class="field"><span>Имя</span><input type="text" name="name" autocomplete="name"><div class="field-error" data-for="name">Напиши, как к тебе обращаться</div></label>
     <label class="field"><span>Телефон</span><input type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="+7"><div class="field-error" data-for="phone">Нужен телефон для связи</div></label>
-    <label class="field"><span>Telegram — чтобы я связалась с тобой</span><input type="text" name="tg" placeholder="@username" autocapitalize="off" autocorrect="off"></label>
+    <label class="field"><span>Мессенджер для связи — Telegram, WhatsApp, MAX или другой</span><input type="text" name="tg" placeholder="@ник или номер и где писать" autocapitalize="off" autocorrect="off"></label>
     <div class="field" id="promo-box"><span>Промокод «Мать в квадрате»</span>
       <div class="promo-row"><input type="text" name="promo" placeholder="если есть" aria-label="Промокод" autocapitalize="characters"><button type="button" class="btn btn-line" id="promo-apply">Применить</button></div>
       <div class="promo-msg" id="promo-msg"></div>
@@ -922,7 +923,7 @@
     alert('Демо-версия: здесь откроется страница оплаты Т-Банка (карта или Долями).');
   });
   document.querySelectorAll('[data-ask]').forEach((a) => a.addEventListener('click', (e) => {
-    e.preventDefault(); alert('Сюда поставим ссылку на Telegram Дарьи.');
+    e.preventDefault(); alert('Сюда поставим ссылки на мессенджеры Дарьи.');
   }));
 
   // Липкая кнопка на телефоне: видна, пока на экране нет ни первого экрана, ни тарифов
